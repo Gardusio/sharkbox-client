@@ -1,8 +1,6 @@
-import dotenv from 'dotenv'
-dotenv.config()
+import enviroment from "../config"
 
-
-const baseUrl = process.env.BASE_URL || "https://localhost:8080"
+const baseUrl = enviroment.BASE_URL || "https://localhost:8080"
 const API_URL = `${baseUrl}/api/v1`
 
 class Response {
