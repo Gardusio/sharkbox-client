@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import { disableReactDevTools } from "@fvilers/disable-react-devtools"
-import enviroment from './config.js'
+import enviroment from './config/config.js'
 
 
 if (enviroment.NODE_ENV === "production") {

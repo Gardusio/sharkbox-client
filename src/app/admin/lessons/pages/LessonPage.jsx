@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container } from '@mui/material';
-import { getById } from '../../../api/lessons.api';
-import LoadingSpinner from '../../common/layouts/LoadingSpinner';
+import { getById } from '../../../../api/lessons.api';
+import LoadingSpinner from '../../../common/layouts/LoadingSpinner';
 import EditLessonPage from './EditLessonPage';
 
 const LessonPage = () => {
@@ -35,3 +35,7 @@ const LessonPage = () => {
 };
 
 export default LessonPage;
+
+
+
+

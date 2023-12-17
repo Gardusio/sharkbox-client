@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { updateLesson } from '../../../api/lessons.api.js';
+import { updateLesson } from '../../../../api/lessons.api.js';
 import { Container, Typography } from '@mui/material';
-import LessonForm from './EditLessonForm.jsx';
+import LessonForm from '../forms/EditLessonForm.jsx';
 
 
 const EditLessonPage = ({ lesson, updateLessonState }) => {

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { createLesson } from '../../../api/lessons.api.js';
+import { createLesson } from '../../../../api/lessons.api.js';
 import { Typography } from '@mui/material';
 import { useNavigate } from 'react-router';
-import CreateLessonForm from './CreateLessonForm.jsx';
+import CreateLessonForm from '../forms/CreateLessonForm.jsx';
 
 const CreateLessonPage = () => {
     const navigate = useNavigate();

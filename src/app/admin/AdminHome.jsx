@@ -1,7 +1,7 @@
-import DayCarousel from "../common/layouts/DayCarousel.jsx";
+import DayCarousel from "../common/buttons/DayCarousel.jsx";
 import { useEffect, useState } from "react";
 import { getAllByDate, removeLesson } from "../../api/lessons.api.js";
-import LessonsList from "./lessons/LessonsList.jsx";
+import LessonsList from "./lessons/components/LessonsList.jsx";
 import dayjs from "dayjs";
 
 function AdminHome() {
@@ -30,11 +30,12 @@ function AdminHome() {
     return (
         <main style={{ width: "100%", margin: "auto" }}>
 
-            <DayCarousel fetchLessons={fetchLessons}></DayCarousel>
+            <DayCarousel fetchLessons={fetchLessons} />
 
             <LessonsList
                 lessons={lessons}
-                deleteLesson={deleteLesson}></LessonsList>
+                deleteLesson={deleteLesson}
+            />
         </main>
     );
 

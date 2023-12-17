@@ -9,9 +9,9 @@ import { UserContext } from '../context/UserProvider';
 import CreateCoursePage from '../admin/courses/CreateCoursePage';
 import CoursePage from '../admin/courses/CoursePage';
 import CourseListPage from '../admin/courses/CourseListPage';
-import CreateLessonPage from '../admin/lessons/CreateLessonPage';
-import LessonPage from '../admin/lessons/LessonPage';
-import PartecipantsPage from '../admin/lessons/PartecipantsPage';
+import CreateLessonPage from '../admin/lessons/pages/CreateLessonPage';
+import LessonPage from '../admin/lessons/pages/LessonPage';
+import PartecipantsPage from '../admin/lessons/pages/PartecipantsPage';
 
 
 function BoxRoutes() {

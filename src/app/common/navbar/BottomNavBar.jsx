@@ -17,7 +17,7 @@ export default function BottomNavBar() {
         <Box
             sx={{ width: "100vw", position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={4}>
             <BottomNavigation
-                sx={{ bgcolor: "#2f2f2f", height: "60px" }}
+                sx={{ bgcolor: "#000505", height: "60px" }}
                 showLabels
                 value={value}
                 onChange={(event, newValue) => {
@@ -67,6 +67,8 @@ export default function BottomNavBar() {
                     label="Corsi"
                     value="corsi"
                     icon={<ViewListIcon sx={{ color: "#fff" }} />} />
+
+                {/*
                 <BottomNavigationAction
                     sx={{
                         color: "#fff",
@@ -75,6 +77,7 @@ export default function BottomNavBar() {
                     label="Utenti"
                     value="utenti"
                     icon={<PeopleIcon sx={{ color: "#fff" }} />} />
+                
                 <BottomNavigationAction
                     sx={{
                         color: "#fff",
@@ -83,7 +86,7 @@ export default function BottomNavBar() {
                     label="Tutorial"
                     value="tutorial"
                     icon={<HelpIcon sx={{ color: "#fff" }} />} />
-
+*/}
             </BottomNavigation>
         </Box>
     );

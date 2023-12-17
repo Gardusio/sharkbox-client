@@ -1,9 +1,9 @@
 import { Box, Button, Container, IconButton, List, ListItem, ListItemText, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import AddPartecipantDialog from "./presentational/AddPartecipantDialog";
+import AddPartecipantDialog from "../components/AddPartecipantDialog";
 import { useLocation } from "react-router";
-import { getAllUsers } from "../../../api/users.api";
-import { addPartecipant, removePartecipant } from "../../../api/lessons.api";
+import { getAllUsers } from "../../../../api/users.api";
+import { addPartecipant, removePartecipant } from "../../../../api/lessons.api";
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircleOutlined';
 
 
