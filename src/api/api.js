@@ -2,6 +2,8 @@ import enviroment from "../config"
 
 const baseUrl = enviroment.BASE_URL || "https://localhost:8080"
 const API_URL = `${baseUrl}/api/v1`
+console.log("baseUrl", baseUrl)
+console.log("apiUrl", API_URL)
 
 class Response {
     constructor(success) {

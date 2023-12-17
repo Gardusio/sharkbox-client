@@ -8,6 +8,7 @@ import { getAll } from '../../../api/courses.api';
 import CoursesListSelect from './CoursesListSelect';
 
 const CreateLessonForm = ({ onSave }) => {
+    const [error, setError] = useState();
     const [courses, setCourses] = useState([]);
     const [formData, setFormData] = useState(
         {
