@@ -2,10 +2,9 @@
   "name": "sharkbox-client",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --production=false"
+    "build": "vite build"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
