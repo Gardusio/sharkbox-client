@@ -14,6 +14,37 @@ const itemStyle = (theme, isActive) => {
     }
 }
 
+const getItaDay = (day) => {
+    switch (day) {
+        case "Mon": return "Lun"
+        case "Tue": return "Mar"
+        case "Wed": return "Mer"
+        case "Thu": return "Gio"
+        case "Fri": return "Ven"
+        case "Sat": return "Sab"
+        case "Sun": return "Dom"
+        default: return ""
+    }
+}
+
+const getItaMonth = (day) => {
+    switch (day) {
+        case "Dec": return "Dic"
+        case "Jan": return "Gen"
+        case "Feb": return "Feb"
+        case "Mar": return "Mar"
+        case "Apr": return "Apr"
+        case "May": return "Mag"
+        case "Jun": return "Giu"
+        case "Jul": return "Lug"
+        case "Aug": return "Ago"
+        case "Sep": return "Set"
+        case "Opt": return "Ott"
+        case "Nov": return "Nov"
+        default: return ""
+    }
+}
+
 const CarouselItem = ({ day, isActive }) => {
     const theme = useTheme();
 
@@ -22,7 +53,7 @@ const CarouselItem = ({ day, isActive }) => {
 
             <Typography
                 color={isActive ? "#fff" : theme.palette.primary.dark}
-                fontSize={"12px"}>{`${day.format("MMM")}`}</Typography>
+                fontSize={"12px"}>{`${getItaMonth(day.format("MMM"))}`}</Typography>
 
             <Typography
                 color={isActive ? "#fff" : theme.palette.primary.dark}
@@ -30,7 +61,7 @@ const CarouselItem = ({ day, isActive }) => {
 
             <Typography
                 color={isActive ? "#fff" : theme.palette.primary.dark}
-                fontSize={"14px"}>{day.format('ddd')}</Typography>
+                fontSize={"14px"}>{getItaDay(day.format('ddd'))}</Typography>
         </Box>
     )
 };

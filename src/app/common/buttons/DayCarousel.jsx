@@ -7,6 +7,7 @@ import KeyboardArrowLeftTwoToneIcon from '@mui/icons-material/KeyboardArrowLeftT
 import KeyboardArrowRightTwoToneIcon from '@mui/icons-material/KeyboardArrowRightTwoTone';
 import CarouselItem from './CarouselItem';
 
+
 const DayCarousel = ({ fetchLessons }) => {
     const theme = useTheme();
     const [activeDate, setActiveDate] = useState(null);
@@ -15,9 +16,10 @@ const DayCarousel = ({ fetchLessons }) => {
     useEffect(() => {
         const fetchDays = (startDate) => {
             const endMonth = startDate.add(3, 'month');
-            const newDays = Array.from({ length: endMonth.diff(startDate, 'day') + 1 }, (_, index) =>
-                startDate.add(index, 'day')
-            );
+            const newDays = Array.from(
+                { length: endMonth.diff(startDate, 'day') + 1 },
+                (_, index) => startDate.add(index, 'day')
+            )
 
             setDays(newDays);
             setActiveDate(newDays[0]);
@@ -51,19 +53,20 @@ const DayCarousel = ({ fetchLessons }) => {
                         visibleSlides={5}
                     >
                         <Slider>
-                            {days.map((day, index) => (
-                                <Slide
-                                    index={index}
-                                    key={index}
-                                    onClick={() => handleDayClick(day)}
-                                >
+                            {days
+                                .map((day, index) => (
+                                    <Slide
+                                        index={index}
+                                        key={index}
+                                        onClick={() => handleDayClick(day)}
+                                    >
 
-                                    <CarouselItem
-                                        day={day}
-                                        isActive={day.isSame(activeDate, 'day')}
-                                    />
-                                </Slide>
-                            ))}
+                                        <CarouselItem
+                                            day={day}
+                                            isActive={day.isSame(activeDate, 'day')}
+                                        />
+                                    </Slide>
+                                ))}
                         </Slider>
                     </CarouselProvider>
                 </Container>
