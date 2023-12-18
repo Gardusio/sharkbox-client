@@ -1,14 +1,16 @@
 
 import React, { useState } from 'react';
-import { Button, Container, Typography, Box, Dialog, DialogTitle } from '@mui/material';
-import TimeSlotsModal from './TimeSlotsModal';
+import { Button, Container, Typography, Box, Dialog, DialogTitle, useTheme } from '@mui/material';
+import TimeSlotsModal from '../components/TimeSlotsModal';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import CourseFormTextFields from './CourseFormTextFields';
 import dayjs from 'dayjs'
-import { deleteSlot } from '../../../api/slots.api';
+import { deleteSlot } from '../../../../api/slots.api';
 
 
-const CourseForm = ({ course, title, onSave }) => {
+const CourseForm = ({ course, onSave }) => {
+    const theme = useTheme();
+
     const [formData, setFormData] = useState(
         course ? course : {
             nome: 'Nuovo corso',
@@ -85,7 +87,9 @@ const CourseForm = ({ course, title, onSave }) => {
         borderRadius: '4px',
         margin: '4px 16px',
         color: formData.slots[day] && formData.slots[day].length > 0 ? '#fff' : '#000',
-        backgroundColor: formData.slots[day] && formData.slots[day].length > 0 ? '#E98A15' : '#fff',
+        backgroundColor: formData.slots[day] && formData.slots[day].length > 0 ?
+            theme.palette.secondary.main
+            : '#fff',
     });
 
     const fullDayName = (day) => {
@@ -95,9 +99,9 @@ const CourseForm = ({ course, title, onSave }) => {
     }
 
     return (
-        <Container component="main" sx={{ marginBottom: "100px" }}>
+        <Container component="main" >
             {/* Course Form */}
-            <Box style={{ display: 'flex', flexDirection: 'column', marginTop: "100px", gap: "16px" }}>
+            <Box style={{ display: 'flex', flexDirection: 'column', gap: "16px" }}>
 
                 <CourseFormTextFields
                     showNome
@@ -158,7 +162,9 @@ const CourseForm = ({ course, title, onSave }) => {
                         onClose={handleCloseModal}
                     />
                 </Dialog>
-                <Button variant="contained" sx={{ bgcolor: "#6DA34D", mt: 2 }} onClick={() => onSave(formData)}>
+                <Button
+                    variant="contained"
+                    onClick={() => onSave(formData)}>
                     Salva
                 </Button>
             </Box>

@@ -1,13 +1,14 @@
-import { Box, Button, Container, IconButton, List, ListItem, ListItemText, Typography } from "@mui/material";
+import { Box, Button, Container, IconButton, List, ListItem, ListItemText, Typography, useTheme } from "@mui/material";
 import { useEffect, useState } from "react";
 import AddPartecipantDialog from "../components/AddPartecipantDialog";
 import { useLocation } from "react-router";
 import { getAllUsers } from "../../../../api/users.api";
 import { addPartecipant, removePartecipant } from "../../../../api/lessons.api";
-import RemoveCircleIcon from '@mui/icons-material/RemoveCircleOutlined';
+import RemoveCircleTwoToneIcon from '@mui/icons-material/RemoveCircleTwoTone';
 
 
 const PartecipantsPage = () => {
+    const theme = useTheme();
     const { state } = useLocation();
 
     const [error, setError] = useState("");
@@ -48,26 +49,26 @@ const PartecipantsPage = () => {
     };
 
     const handleRemovePartecipant = async (user) => {
-
         const updatedLesson = await removePartecipant(state.lesson, user.id);
         setPartecipants(updatedLesson.partecipanti);
         setInQueue(updatedLesson.coda);
         setUsers(prev => [...prev, user])
     }
 
+
+
     return (
-        <Container sx={{ px: 2, pt: 1, marginBottom: "100px" }}>
-            <Typography variant="h5" fontWeight={"bold"} textAlign={"center"}>{state.lesson.nome}</Typography>
-            <Typography variant="subtitle1" fontWeight={"medium"} textAlign={"center"}>{state.lesson.date}</Typography>
+        <Container sx={{ px: 2, pt: 2 }}>
+            <Typography variant="h5" fontWeight={"bold"} textAlign={"center"} color={"dark"} >{state.lesson.nome}</Typography>
+            <Typography variant="subtitle1" fontWeight={"medium"} color={"dark"} textAlign={"center"}>{state.lesson.date}</Typography>
             <Box sx={{
                 width: "90%",
                 margin: "auto",
                 mt: 4, pt: 2, pb: 4, px: 2,
-                boxShadow: "#6DA34D 0px 1px 4px;",
-                border: "1px solid #52AA5E",
-                borderRadius: "10px"
+                boxShadow: theme.containers.shadows.primary.highlighted,
+                ...theme.containers.borders.highlighted,
             }}>
-                <Typography mb={2} fontWeight={"bold"} textAlign={"center"} color={"#6DA34D"}> Aggiungi partecipanti</Typography>
+                <Typography mb={4} color={"primary"} textAlign={"center"}> Aggiungi partecipanti</Typography>
                 <AddPartecipantDialog
                     users={users.map(u => ({ name: u.name, id: u.id }))}
                     addPartecipant={handleAddPartecipant} />
@@ -76,7 +77,7 @@ const PartecipantsPage = () => {
                 mt: 6,
             }}>
                 <Box mt={2}>
-                    <Typography fontWeight={"bold"} color={"#2f2f2f"} >Partecipanti</Typography>
+                    <Typography fontWeight={"bold"} color={"dark"} >Partecipanti</Typography>
                     <List>
                         {partecipants.length > 0 ? partecipants.map((user, index) => (
                             <ListItem
@@ -86,10 +87,10 @@ const PartecipantsPage = () => {
                                 disableGutters
                                 secondaryAction={
                                     <IconButton
-                                        sx={{ color: "#942911" }}
+                                        sx={{ color: "#7a7a7a" }}
                                         variant="text"
                                         onClick={async () => await handleRemovePartecipant(user)}>
-                                        <RemoveCircleIcon />
+                                        <RemoveCircleTwoToneIcon />
                                     </IconButton>
                                 }
                             >
@@ -99,7 +100,7 @@ const PartecipantsPage = () => {
                     </List>
                 </Box>
                 <Box mt={6}>
-                    <Typography fontWeight={"bold"} color={"#2f2f2f"}  >In coda</Typography>
+                    <Typography fontWeight={"bold"} color={"dark"}  >In coda</Typography>
                     <List>
                         {inQueue.length > 0 ? inQueue.map((user, index) => (
                             <ListItem

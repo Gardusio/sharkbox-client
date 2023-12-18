@@ -22,7 +22,7 @@ export default function SimpleTopBar({ props }) {
     const navigate = useNavigate()
 
     return (
-        <Box>
+        <Box sx={{ mb: "100px" }}>
             <AppBar sx={() => appBarStyle(theme)}>
                 <Toolbar sx={{ ...theme.containers.row.centerbetween }}>
                     <Typography component="div" variant="h6" sx={{ color: theme.palette.text.light }}>

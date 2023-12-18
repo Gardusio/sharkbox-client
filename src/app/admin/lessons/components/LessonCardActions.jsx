@@ -6,7 +6,7 @@ import {
 
 
 
-const LessonCardActions = ({ lesson }) => {
+const LessonCardActions = ({ lesson, deleteLesson }) => {
     const theme = useTheme();
     const navigate = useNavigate();
 
@@ -22,11 +22,11 @@ const LessonCardActions = ({ lesson }) => {
                 variant='contained'
                 color='primary'
                 onClick={() => navigate("/lezioni/" + lesson.id + "/partecipanti", { state: { lesson: lesson } })}>
-                partecipanti
+                Iscritti
             </Button>
 
             <Button variant='text'
-                color="warning"
+                sx={{ color: "#7a7a7a" }}
                 onClick={async () => await deleteLesson(lesson.id)}>
                 Elimina
             </Button>

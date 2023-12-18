@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Typography, Box, TextField } from '@mui/material';
-import CourseFormTextFields from '../../courses/CourseFormTextFields';
+import CourseFormTextFields from '../../courses/forms/CourseFormTextFields';
 import dayjs from 'dayjs'
 import { DatePicker } from '@mui/x-date-pickers';
 import { getAll } from '../../../../api/courses.api';

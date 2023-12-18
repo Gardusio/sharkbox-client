@@ -8,22 +8,18 @@ const theme = createTheme({
         },
         text: {
             light: '#fff',
-            main: '#2F2F2F',
+            main: '#00050F',
         },
         primary: {
             main: '#21a179',
-            dark: '#2f2f2f'
+            dark: '#00050F',
+            light: '#fff'
         },
         secondary: {
             main: '#647aa3',
         },
         warning: {
-            main: "#942911"
-        }
-    },
-    shadows: {
-        primary: {
-            main: "rgba(0, 0, 0, 0.16) 0px 1px 4px"
+            main: "#7a7a7a"
         }
     },
     containers: {
@@ -84,10 +80,26 @@ const theme = createTheme({
             main: {
                 border: "1px solid rgba(0,0,0,0.2)",
                 borderRadius: "4px"
+            },
+            highlighted: {
+                border: "1px solid #21a179",
+                borderRadius: "4px"
             }
+        },
+        shadows: {
+            primary: {
+                main: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
+                highlighted: "#21a179 0px 1px 4px"
+            }
+
+        }
+
+    },
+    typography: {
+        allVariants: {
+            color: "#00050F"
         }
     }
-
-});
+})
 
 export default theme;

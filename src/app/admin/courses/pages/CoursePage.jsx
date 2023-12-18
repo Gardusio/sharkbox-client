@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Typography, Box } from '@mui/material';
-import { getById } from '../../../api/courses.api';
-import LoadingSpinner from '../../common/layouts/LoadingSpinner';
+import { getById } from '../../../../api/courses.api';
+import LoadingSpinner from '../../../common/layouts/LoadingSpinner';
 import EditCoursePage from './EditCoursePage';
 
 const CoursePage = () => {

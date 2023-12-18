@@ -15,7 +15,7 @@ const LessonCard = ({ lesson, deleteLesson }) => {
         <Card variant="outlined"
             sx={{
                 width: "92%", margin: "auto",
-                boxShadow: theme.shadows.primary.main,
+                boxShadow: theme.containers.shadows.primary.main,
                 background: "#fcfafa",
             }} >
 
@@ -26,7 +26,7 @@ const LessonCard = ({ lesson, deleteLesson }) => {
                 <LessonCardContent lesson={lesson} />
             </CardContent>
 
-            <LessonCardActions lesson={lesson} />
+            <LessonCardActions lesson={lesson} deleteLesson={deleteLesson} />
 
         </Card>
     );

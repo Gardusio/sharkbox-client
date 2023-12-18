@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import CourseForm from './CourseForm.jsx';
+import CourseForm from '../forms/CourseForm.jsx';
 import { useNavigate } from 'react-router';
-import { updateCourse } from '../../../api/courses.api.js';
+import { updateCourse } from '../../../../api/courses.api.js';
 import { Typography } from '@mui/material';
 
 

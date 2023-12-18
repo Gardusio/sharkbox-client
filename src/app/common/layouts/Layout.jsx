@@ -23,10 +23,10 @@ function Layout() {
       return { withBtn: false, title: "Crea una lezione singola" };
     }
     else if (pathname.includes('/partecipanti')) {
-      return { withBtn: false, title: "Partecipanti" };
+      return { withBtn: false, title: "Iscritti e in coda" };
     }
     else if (pathname.includes("/corsi/modifica")) {
-      return { withBtn: false, title: "Palinsesto" };
+      return { withBtn: false, title: "Palinsesto del corso" };
     }
     else {
       return { withBtn: false, title: "Corsi" };
@@ -41,9 +41,7 @@ function Layout() {
   return (
     <div style={{ padding: "0 0 104px 0" }}>
       <SimpleTopBar props={getNavbarProps()} />
-      <div style={{ marginTop: "90px" }}>
-        <Outlet />
-      </div>
+      <Outlet />
       <BottomNavBar />
     </div>
   );
