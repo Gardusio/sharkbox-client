@@ -83,7 +83,7 @@ const theme = createTheme({
             },
             highlighted: {
                 border: "1px solid #21a179",
-                borderRadius: "4px"
+                borderRadius: "8px"
             }
         },
         shadows: {

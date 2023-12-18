@@ -137,8 +137,6 @@ const CourseForm = ({ course, onSave }) => {
                     ))}
                 </Box>
 
-                {/* start Date */}
-
                 {/* End Date */}
                 <Typography mb={1}>Ripeti fino al</Typography>
                 <DatePicker
@@ -147,7 +145,6 @@ const CourseForm = ({ course, onSave }) => {
                     onChange={handleEndDateChange}
                 />
 
-                {/* Time Slots Modal */}
                 <Dialog sx={{ p: 0 }} open={isModalOpen} fullScreen>
                     <DialogTitle
                         textAlign={'center'}

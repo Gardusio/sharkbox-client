@@ -6,11 +6,14 @@ import {
     Box,
     List,
     ListItem,
-    ListItemText
+    ListItemText,
+    useTheme
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 
 const TimeSlotsModal = ({ slots, onSave, onRemove, onClose, selectedDay }) => {
+    const theme = useTheme();
+
     const [start, setStart] = useState('10:00');
     const [end, setEnd] = useState('11:00');
 
@@ -26,20 +29,18 @@ const TimeSlotsModal = ({ slots, onSave, onRemove, onClose, selectedDay }) => {
         <Box
             display={'flex'}
             flexDirection={'column'}
-            sx={{
-                height: "100vh",
-                p: 3,
-                m: 0
-            }}
+            sx={{ p: 3 }}
         >
 
-            <Box
+            <Box sx={{
+                ...theme.containers.borders.highlighted
+            }}
                 display={'flex'} flexDirection={'column'} gap={'20px'} p={2}
-                borderRadius={'10px'}
-                boxShadow={"rgba(0, 0, 0, 0.20) 0px 1px 4px;"}
-                bgcolor={"#fffee"}
+
+                boxShadow={theme.containers.shadows.primary.highlighted}
+                bgcolor={"#fcfafa"}
             >
-                <Typography textAlign={'center'} fontWeight={'bold'} mb={1}>Crea lezione</Typography>
+                <Typography variant="h6" textAlign={'center'} fontWeight={'bold'} mb={1}>Crea lezione</Typography>
                 <Box
                     display={'flex'} alignItems={"center"} justifyContent={"space-between"}>
                     <TextField
@@ -66,11 +67,12 @@ const TimeSlotsModal = ({ slots, onSave, onRemove, onClose, selectedDay }) => {
                         sx={{
                             width: "24px",
                             height: "24px",
-                            borderRadius: "4px",
+                            borderRadius: "8px",
                             padding: 1,
                             margin: "auto",
-                            boxShadow: "0 3px 6px rgba(0,0,0,0.20)",
-                            color: "#fff", backgroundColor: "#6DA34D"
+                            boxShadow: theme.containers.shadows.primary.main,
+                            color: "#fff",
+                            backgroundColor: theme.palette.primary.main
                         }}
                         onClick={handleAddSlot}>
                     </AddIcon>
@@ -78,8 +80,8 @@ const TimeSlotsModal = ({ slots, onSave, onRemove, onClose, selectedDay }) => {
                 </Box>
             </Box>
 
-            <Typography sx={{ p: 0, mt: 6 }} fontWeight={'bold'}>Lista lezioni </Typography>
-            <List>
+            <Typography sx={{ p: 0, mt: 6 }} fontWeight={'bold'} variant="h6">Lista lezioni </Typography>
+            <List sx={{ mb: 4 }}>
                 {slots.length > 0 ? slots.map((slot, index) => (
                     <ListItem
                         divider
@@ -88,18 +90,18 @@ const TimeSlotsModal = ({ slots, onSave, onRemove, onClose, selectedDay }) => {
                         disableGutters
                         secondaryAction={
                             <Button
-                                sx={{ fontWeight: "medium", color: "#942911" }}
                                 variant="text"
+                                color='warning'
                                 onClick={() => onRemove(index)}>Elimina</Button>
                         }
                     >
                         <ListItemText primary={`${selectedDay} ${slot.start} - ${slot.end}`} />
                     </ListItem>
-                )) : <Typography textAlign={'center'} color={"rgba(0,0,0,0.3)"}>Ancora nessuna lezione</Typography>}
+                )) : <Typography mt={2} textAlign={'center'} color={"rgba(0,0,0,0.3)"}>Ancora nessuna lezione</Typography>}
 
             </List>
 
-            <Button variant="contained" onClick={onClose} sx={{ mt: 2, bgcolor: "#6DA34D" }}>
+            <Button variant="contained" onClick={onClose} >
                 SALVA
             </Button>
         </Box >

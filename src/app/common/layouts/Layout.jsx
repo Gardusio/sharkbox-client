@@ -17,7 +17,7 @@ function Layout() {
       return { btnText: "crea corso", withBtn: true, title: "Corsi", link: "/corsi/crea" };
     }
     else if (pathname.includes('/corsi/crea')) {
-      return { withBtn: false, itle: "Crea nuovo palinsesto" };
+      return { withBtn: false, title: "Nuovo corso" };
     }
     else if (pathname.includes('/lezioni/crea')) {
       return { withBtn: false, title: "Crea una lezione singola" };

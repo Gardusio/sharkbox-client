@@ -64,6 +64,7 @@ const CreateLessonForm = ({ onSave }) => {
     return (
         <Container component="main">
             {/* Lesson Form */}
+            <Typography variant="subtitle1" fontWeight={"500"}>Lezione di</Typography>
             <Box style={{ display: 'flex', flexDirection: 'column', gap: "24px" }}>
 
                 <CoursesListSelect courses={courses} onSelect={handleCourseChange}></CoursesListSelect>
@@ -97,13 +98,14 @@ const CreateLessonForm = ({ onSave }) => {
                     />
                 </Box>
 
-                <Typography >Data lezione</Typography>
+                <Typography mt={1} variant="subtitle1" fontWeight={"500"}>Data lezione</Typography>
                 <DatePicker
                     label="Scegli una data"
                     value={dayjs(formData.date)}
                     onChange={handleDateChange}
                 />
-                <Button variant="contained" sx={{ bgcolor: "#9BC53D", mt: 2 }} onClick={() => onSave(formData)}>
+
+                <Button variant="contained" onClick={() => onSave(formData)}>
                     Salva
                 </Button>
             </Box>

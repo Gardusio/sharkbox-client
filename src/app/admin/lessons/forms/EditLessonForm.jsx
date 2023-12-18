@@ -28,11 +28,9 @@ const LessonForm = ({ lesson, onSave }) => {
     return (
         <Container component="main">
 
-            <Typography variant="h5" color={"#2F2F2F"} textAlign={'center'} fontWeight={"bold"}>{lesson.nome}</Typography>
-            <Typography variant="subtitle1" textAlign={'center'} color={"#2F2F2F"} fontWeight={"bold"}>{lesson.date}</Typography>
+            <Typography variant="h5" textAlign={'center'} fontWeight={"bold"}>{lesson.nome}</Typography>
+            <Typography variant="subtitle1" textAlign={'center'} fontWeight={"bold"}>{lesson.date}</Typography>
 
-
-            {/* Course Form */}
             <Box style={{ display: 'flex', flexDirection: 'column', marginTop: "12px", gap: "16px" }}>
 
                 <CourseFormTextFields
@@ -64,7 +62,7 @@ const LessonForm = ({ lesson, onSave }) => {
                         inputProps={{ step: 300 }}
                     />
                 </Box>
-                <Button variant="contained" sx={{ bgcolor: "#9BC53D", mt: 2 }} onClick={() => onSave(formData)}>
+                <Button variant="contained" onClick={() => onSave(formData)}>
                     Salva
                 </Button>
             </Box>

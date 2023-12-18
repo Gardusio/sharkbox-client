@@ -19,7 +19,7 @@ const CoursesListSelect = ({ courses, onSelect }) => {
 
     return (
         <Box sx={{ minWidth: 120 }}>
-            <Typography mb={2} >Lezione di</Typography>
+            <Typography mb={2} ></Typography>
             <FormControl fullWidth>
                 <InputLabel id="select-corso-label">Scegli il corso</InputLabel>
                 <Select
