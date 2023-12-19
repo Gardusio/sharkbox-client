@@ -51,7 +51,7 @@ const CourseListPage = () => {
                             display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"
                         }}>
                         {courses.map((course) => (
-                            <ListItem key={course.id} disablePadding>
+                            <ListItem divider key={course.id} disablePadding sx={{ mt: 2 }}>
                                 <CourseCard course={course} deleteCourse={deleteCourse} />
                             </ListItem>
                         ))}

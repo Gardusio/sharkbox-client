@@ -14,7 +14,8 @@ const CourseCard = ({ course, deleteCourse }) => {
     return (
         <Card variant="outlined"
             sx={{
-                width: "92%", margin: "auto",
+                width: "92%",
+                margin: "auto",
                 boxShadow: theme.containers.shadows.primary.main,
                 background: "#fcfafa",
             }} >
@@ -33,11 +34,15 @@ const CourseCard = ({ course, deleteCourse }) => {
 
                 <List>
                     <CardListItem label={"Massimo"} value={`${course.max_partecipanti} persone`} icon={GroupsTwoToneIcon} />
+                    
                     <CardListItem label={"Disdetta"} value={`${course.anticipo_disdetta} minuti prima`} icon={ScheduleTwoToneIcon} />
+                    
                     <CardListItem label={"Anticipo"} value={`${course.anticipo_prenotazione} ore prima`} icon={ScheduleTwoToneIcon} />
+                    
                     <CardListItem label={"Palinsesto"} value={`${dayjs(course.slots_end_date).format("DD/MM/YYYY")}`} icon={CalendarMonthIcon} />
                 </List>
             </CardContent>
+
             <CardActions sx={{ display: 'flex', alignItems: "center", justifyContent: "flex-end", px: 2, pt: 2 }}>
                 <Button
                     variant="text"
@@ -45,7 +50,6 @@ const CourseCard = ({ course, deleteCourse }) => {
                     onClick={async () => await deleteCourse(course)}>
                     Elimina
                 </Button>
-
             </CardActions>
         </Card>
     );

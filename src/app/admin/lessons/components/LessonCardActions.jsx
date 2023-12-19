@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {
     Button, CardActions, useTheme
 } from '@mui/material';
+import AdminActionButtons from './AdminActionButtons';
 
 
 
@@ -18,19 +19,7 @@ const LessonCardActions = ({ lesson, deleteLesson }) => {
                 py: 3
             }}>
 
-            <Button
-                variant='contained'
-                color='primary'
-                onClick={() => navigate("/lezioni/" + lesson.id + "/partecipanti", { state: { lesson: lesson } })}>
-                Iscritti
-            </Button>
-
-            <Button variant='text'
-                sx={{ color: "#7a7a7a" }}
-                onClick={async () => await deleteLesson(lesson.id)}>
-                Elimina
-            </Button>
-
+            <AdminActionButtons lesson={lesson} deleteLesson={deleteLesson} />
         </CardActions>
 
     );
