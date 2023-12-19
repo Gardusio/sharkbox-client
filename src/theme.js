@@ -83,13 +83,13 @@ const theme = createTheme({
             },
             highlighted: {
                 border: "1px solid #21a179",
-                borderRadius: "8px"
+                borderRadius: "4px"
             }
         },
         shadows: {
             primary: {
-                main: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
-                highlighted: "#21a179 0px 1px 4px"
+                main: "rgba(0, 0, 0, 0.16) 0px 1px 3px",
+                highlighted: "#21a179 0px 0px 3px"
             }
 
         }

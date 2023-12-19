@@ -31,7 +31,7 @@ const LessonForm = ({ lesson, onSave }) => {
             <Typography variant="h5" textAlign={'center'} fontWeight={"bold"}>{lesson.nome}</Typography>
             <Typography variant="subtitle1" textAlign={'center'} fontWeight={"bold"}>{lesson.date}</Typography>
 
-            <Box style={{ display: 'flex', flexDirection: 'column', marginTop: "12px", gap: "16px" }}>
+            <Box style={{ display: 'flex', flexDirection: 'column', marginTop: "12px", gap: "24px" }}>
 
                 <CourseFormTextFields
                     max_partecipanti={formData.max_partecipanti}
@@ -62,7 +62,9 @@ const LessonForm = ({ lesson, onSave }) => {
                         inputProps={{ step: 300 }}
                     />
                 </Box>
-                <Button variant="contained" onClick={() => onSave(formData)}>
+                <Button
+                    sx={{ mt: 4 }}
+                    variant="contained" onClick={() => onSave(formData)}>
                     Salva
                 </Button>
             </Box>

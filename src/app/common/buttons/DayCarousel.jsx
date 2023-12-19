@@ -47,8 +47,8 @@ const DayCarousel = ({ fetchLessons }) => {
                 <KeyboardArrowLeftTwoToneIcon sx={{ color: "rgba(0,0,0,0.3)", marginTop: "-2px" }} />
                 <Container sx={{ m: 0, p: 0 }}>
                     <CarouselProvider
-                        naturalSlideWidth={100}
-                        naturalSlideHeight={130}
+                        naturalSlideWidth={90}
+                        naturalSlideHeight={140}
                         totalSlides={days.length}
                         visibleSlides={5}
                     >

@@ -15,8 +15,9 @@ const LessonCardActions = ({ lesson, deleteLesson }) => {
         <CardActions
             sx={{
                 ...theme.containers.row.centerbetween,
-                px: 2,
-                py: 3
+                pt: 2,
+                mb: 1,
+                px: 2
             }}>
 
             <AdminActionButtons lesson={lesson} deleteLesson={deleteLesson} />

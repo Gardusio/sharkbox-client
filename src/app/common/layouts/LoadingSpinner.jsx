@@ -4,10 +4,15 @@ import { Box } from '@mui/material/';
 /**
  * Wraps a loading spinner
  */
-function LoadingSpinner() {
+function LoadingSpinner({ fullPage }) {
 
     return (
-        <Box sx={{ display: 'flex', width: '100vw', alignItems: 'center', justifyContent: 'center' }}>
+        <Box sx={{
+            display: 'flex',
+            width: fullPage ? '100vw' : "100%",
+            height: fullPage ? '100vh' : "100%",
+            alignItems: 'center', justifyContent: 'center'
+        }}>
             <CircularProgress />
         </Box>
     );

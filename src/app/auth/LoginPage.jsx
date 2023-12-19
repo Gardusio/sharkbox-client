@@ -23,13 +23,13 @@ const LoginPage = () => {
     };
 
     return (
-        <Container component="main" maxWidth="xs" style={{ marginTop: '20px' }}>
+        <Container component="main" maxWidth="xs" sx={{ p: 0 }}>
             {/* Logo */}
-            <img src="\imgs\logo.png" alt="Logo" style={{ width: '100%', marginBottom: '20px' }} />
+            <img src="\imgs\sharklogo.png" alt="Logo" style={{ width: '100%', marginBottom: '20px' }} />
 
             {/* Login Form */}
-            <form style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                <Typography variant="h5">Shark Box</Typography>
+            <form style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: "0 42px" }}>
+                <Typography variant="h5">Entra nel box</Typography>
                 <TextField
                     label="Email"
                     type="email"
@@ -57,12 +57,10 @@ const LoginPage = () => {
                 </Button>
             </form>
 
-            {/* Register Link */}
-            <div style={{ marginTop: '20px', textAlign: 'center' }}>
-                <Typography variant="body2">
-                    Non hai un account? <Link href="/register">Registrati</Link>
-                </Typography>
-            </div>
+            <Typography variant="body2" textAlign={"center"} mt={2} mb={6}>
+                Non hai un account? <Link href="/register">Registrati</Link>
+            </Typography>
+
         </Container>
     );
 };

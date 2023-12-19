@@ -62,7 +62,7 @@ const CreateLessonForm = ({ onSave }) => {
 
 
     return (
-        <Container component="main">
+        <Container component="main" sx={{ pt: 1, px: 4 }}>
             {/* Lesson Form */}
             <Typography variant="subtitle1" fontWeight={"500"}>Lezione di</Typography>
             <Box style={{ display: 'flex', flexDirection: 'column', gap: "24px" }}>

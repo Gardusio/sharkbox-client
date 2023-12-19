@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-    Button, useTheme
+    Button, IconButton, useTheme
 } from '@mui/material';
+import GroupAddTwoToneIcon from '@mui/icons-material/GroupAddTwoTone';
 
 
 
@@ -12,13 +13,17 @@ const AdminActionButtons = ({ lesson, deleteLesson }) => {
 
     return (
         <React.Fragment>
-
-            <Button
-                variant='contained'
+            <IconButton
                 color='primary'
-                onClick={() => navigate("/lezioni/" + lesson.id + "/partecipanti", { state: { lesson: lesson } })}>
-                Iscritti
-            </Button>
+                sx={{
+                    px: 3,
+                    borderRadius: "4px",
+                    bgcolor: theme.palette.primary.main, color: "#fff"
+                }}
+                onClick={() => navigate("/lezioni/" + lesson.id + "/partecipanti", { state: { lesson: lesson } })}
+                aria-label="partecipanti">
+                <GroupAddTwoToneIcon fontSize='medium' />
+            </IconButton>
 
             <Button
                 variant='text'
@@ -26,6 +31,7 @@ const AdminActionButtons = ({ lesson, deleteLesson }) => {
                 onClick={async () => await deleteLesson(lesson.id)}>
                 Elimina
             </Button>
+
 
         </React.Fragment>
 

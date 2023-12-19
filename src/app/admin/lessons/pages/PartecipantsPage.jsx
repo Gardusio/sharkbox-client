@@ -1,4 +1,4 @@
-import { Box, Button, Container, IconButton, List, ListItem, ListItemText, Typography, useTheme } from "@mui/material";
+import { Box, Container, IconButton, List, ListItem, ListItemText, Typography, useTheme } from "@mui/material";
 import { useEffect, useState } from "react";
 import AddPartecipantDialog from "../components/AddPartecipantDialog";
 import { useLocation } from "react-router";
@@ -58,7 +58,7 @@ const PartecipantsPage = () => {
 
 
     return (
-        <Container sx={{ px: 2, pt: 2 }}>
+        <Container sx={{ px: 4, pt: 2 }}>
             <Typography variant="h5" fontWeight={"bold"} textAlign={"center"} color={"dark"} >{state.lesson.nome}</Typography>
             <Typography variant="subtitle1" fontWeight={"medium"} color={"dark"} textAlign={"center"}>{state.lesson.date}</Typography>
             <Box sx={{
@@ -68,11 +68,12 @@ const PartecipantsPage = () => {
                 boxShadow: theme.containers.shadows.primary.highlighted,
                 ...theme.containers.borders.highlighted,
             }}>
-                <Typography mb={4} color={"primary"} textAlign={"center"}> Aggiungi partecipanti</Typography>
+                <Typography mb={4} fontWeight={"600"} color={"primary"} textAlign={"center"}> Aggiungi partecipanti</Typography>
                 <AddPartecipantDialog
                     users={users.map(u => ({ name: u.name, id: u.id }))}
                     addPartecipant={handleAddPartecipant} />
             </Box>
+
             <Box sx={{
                 mt: 6,
             }}>

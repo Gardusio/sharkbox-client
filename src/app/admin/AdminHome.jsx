@@ -3,18 +3,23 @@ import { useEffect, useState } from "react";
 import { getAllByDate, removeLesson } from "../../api/lessons.api.js";
 import LessonsList from "./lessons/components/LessonsList.jsx";
 import dayjs from "dayjs";
+import LoadingSpinner from "../common/layouts/LoadingSpinner.jsx";
+import { Box, Typography } from "@mui/material";
 
 function AdminHome() {
 
     const [lessons, setLessons] = useState([])
     const [error, setError] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
 
     const fetchLessons = (date) => {
+
         getAllByDate(date)
-            .then(lessons =>
+            .then(lessons => {
                 setLessons(lessons)
-            )
-            .catch(err => setError("Qualcosa è andato storto, riprova più tardi"));
+            })
+            .catch(err => setError("Qualcosa è andato storto, riprova più tardi"))
+            .finally(() => setIsLoading(false));
     };
 
     useEffect(() => {
@@ -27,15 +32,26 @@ function AdminHome() {
             .catch(err => setError("Impossibile cancellare la lezione"));
     }
 
+    if (isLoading) {
+        return (
+            <Box mt={50}>
+                <LoadingSpinner />
+            </Box>
+        )
+    }
+
     return (
         <main style={{ width: "100%", margin: "auto" }}>
 
             <DayCarousel fetchLessons={fetchLessons} />
 
-            <LessonsList
-                lessons={lessons}
-                deleteLesson={deleteLesson}
-            />
+            {error ? <Typography variant="body1" textAlign={"center"} color={"error"}>{error}</Typography>
+                :
+                <LessonsList
+                    lessons={lessons}
+                    deleteLesson={deleteLesson}
+                />
+            }
         </main>
     );
 

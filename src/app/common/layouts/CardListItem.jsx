@@ -1,12 +1,9 @@
 import { Typography, ListItem, useTheme, Box } from '@mui/material';
 
-import QueueTwoToneIcon from '@mui/icons-material/QueueTwoTone';
-import GroupsTwoToneIcon from '@mui/icons-material/GroupsTwoTone';
-
 const itemStyle = (theme) => {
     return {
-        height: "50px",
-        ...theme.containers.row.centerbetween
+        ...theme.containers.row.centerbetween,
+        py: 1
     }
 }
 
@@ -22,7 +19,7 @@ const iconStyle = (theme) => {
 
 const textStyle = (theme) => {
     return {
-        fontWeight: "600",
+        fontWeight: "400",
         color: theme.palette.secondary.main
     }
 }

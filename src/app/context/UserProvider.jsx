@@ -38,7 +38,7 @@ const UserProvider = ({ children }) => {
 
 
     if (isLoading) {
-        return <LoadingSpinner />
+        return <LoadingSpinner fullPage />
     }
 
     return (

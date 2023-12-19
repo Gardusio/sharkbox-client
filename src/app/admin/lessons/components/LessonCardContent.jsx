@@ -9,7 +9,7 @@ const LessonCardContent = ({ lesson }) => {
     const theme = useTheme();
 
     return (
-        <List >
+        <List sx={{ p: 0 }}>
 
             <CardListItem
                 label={"Iscritti"}

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Typography, List, ListItem, Button, Card, CardContent, CardActions, Box, useTheme } from '@mui/material';
+import { Typography, List, Button, Card, CardContent, CardActions, Box, useTheme } from '@mui/material';
 import dayjs from 'dayjs'
 import CardListItem from '../../../common/layouts/CardListItem';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
@@ -34,11 +34,11 @@ const CourseCard = ({ course, deleteCourse }) => {
 
                 <List>
                     <CardListItem label={"Massimo"} value={`${course.max_partecipanti} persone`} icon={GroupsTwoToneIcon} />
-                    
+
                     <CardListItem label={"Disdetta"} value={`${course.anticipo_disdetta} minuti prima`} icon={ScheduleTwoToneIcon} />
-                    
+
                     <CardListItem label={"Anticipo"} value={`${course.anticipo_prenotazione} ore prima`} icon={ScheduleTwoToneIcon} />
-                    
+
                     <CardListItem label={"Palinsesto"} value={`${dayjs(course.slots_end_date).format("DD/MM/YYYY")}`} icon={CalendarMonthIcon} />
                 </List>
             </CardContent>

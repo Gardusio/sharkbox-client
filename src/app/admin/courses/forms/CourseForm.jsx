@@ -13,7 +13,7 @@ const CourseForm = ({ course, onSave }) => {
 
     const [formData, setFormData] = useState(
         course ? course : {
-            nome: 'Nuovo corso',
+            nome: '',
             anticipo_disdetta: '30',
             anticipo_prenotazione: '48',
             max_partecipanti: '20',
@@ -99,7 +99,7 @@ const CourseForm = ({ course, onSave }) => {
     }
 
     return (
-        <Container component="main" >
+        <Container component="main" sx={{ px: 4 }}>
             {/* Course Form */}
             <Box style={{ display: 'flex', flexDirection: 'column', gap: "16px" }}>
 
@@ -112,7 +112,7 @@ const CourseForm = ({ course, onSave }) => {
                     onChange={handleChange} />
 
 
-                <Typography >Crea il palinsesto</Typography>
+                <Typography mb={1} fontWeight={"500"}>Crea il palinsesto</Typography>
                 <Box display={'flex'} alignItems={'center'} justifyContent={'center'}>
                     {['Lun', 'Mar', 'Mer'].map((day) => (
                         <Button
@@ -138,7 +138,7 @@ const CourseForm = ({ course, onSave }) => {
                 </Box>
 
                 {/* End Date */}
-                <Typography mb={1}>Ripeti fino al</Typography>
+                <Typography mb={1} fontWeight={"500"}>Ripeti fino al</Typography>
                 <DatePicker
                     label="Scegli una data"
                     value={dayjs(formData.slots_end_date)}
@@ -160,11 +160,12 @@ const CourseForm = ({ course, onSave }) => {
                     />
                 </Dialog>
                 <Button
+                    sx={{ mt: 2 }}
                     variant="contained"
                     onClick={() => onSave(formData)}>
                     Salva
                 </Button>
-            </Box>
+            </Box >
         </Container >
     );
 };

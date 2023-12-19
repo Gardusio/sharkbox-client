@@ -9,6 +9,7 @@ const RegisterPage = () => {
         nome: '',
         cognome: '',
         email: '',
+        telefono: "",
         password: '',
         confirmPassword: '',
     });
@@ -40,17 +41,17 @@ const RegisterPage = () => {
 
             navigate('/login');
         } catch (error) {
-            setError('Non è stato possibile creare il tuo account, riprova più tardi'); 
+            setError('Non è stato possibile creare il tuo account, riprova più tardi');
         }
     };
 
     return (
-        <Container component="main" maxWidth="xs">
+        <Container component="main" maxWidth="xs" sx={{ p: 0 }}>
             {/* Logo */}
-            <img src="/imgs/logo.png" alt="Logo" style={{ width: '100%', marginBottom: '20px' }} />
+            <img src="/imgs/sharklogo.png" alt="Logo" style={{ width: '100%' }} />
 
             {/* Registration Form */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: "24px 42px" }}>
                 <Typography variant="h5">Crea account</Typography>
                 <TextField
                     label="Nome"
@@ -113,12 +114,11 @@ const RegisterPage = () => {
                 </Button>
             </div>
 
-            {/* Login Link */}
-            <div style={{ marginTop: '20px', textAlign: 'center' }}>
-                <Typography variant="body2">
-                    Hai gia un account? <Link href="/login">Entra nel box</Link>
-                </Typography>
-            </div>
+
+            <Typography variant="body2" textAlign={"center"} mb={6}>
+                Hai gia un account? <Link href="/login">Entra nel box</Link>
+            </Typography>
+
         </Container>
     );
 };
