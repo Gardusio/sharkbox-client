@@ -105,7 +105,9 @@ const CreateLessonForm = ({ onSave }) => {
                     onChange={handleDateChange}
                 />
 
-                <Button variant="contained" onClick={() => onSave(formData)}>
+                <Button
+                    sx={{ mt: 2, color: "#fff" }}
+                    variant="contained" onClick={() => onSave(formData)}>
                     Salva
                 </Button>
             </Box>

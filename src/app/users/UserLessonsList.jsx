@@ -1,12 +1,12 @@
 import React from 'react';
 
 import { Container, Typography, List, ListItem } from '@mui/material';
-import LessonCard from './LessonCard';
+import LessonCard from "../admin/lessons/components/LessonCard"
 
 const UsersLessonsList = ({ lessons, joinLesson }) => {
 
     return (
-        <Container component="main" sx={{ p: 0, marginBottom: "100px" }}>
+        <Container component="main" sx={{ p: 0 }}>
             {
                 lessons.length > 0 ? (
 
@@ -18,7 +18,7 @@ const UsersLessonsList = ({ lessons, joinLesson }) => {
                         }}>
 
                         {lessons.map((lesson, idx) => (
-                            "TODO"
+                            <LessonCard lesson={lesson} joinLesson={joinLesson} />
                         ))}
                     </List>
 

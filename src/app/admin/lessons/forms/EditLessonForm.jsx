@@ -63,7 +63,7 @@ const LessonForm = ({ lesson, onSave }) => {
                     />
                 </Box>
                 <Button
-                    sx={{ mt: 4 }}
+                    sx={{ mt: 2, color: "#fff" }}
                     variant="contained" onClick={() => onSave(formData)}>
                     Salva
                 </Button>

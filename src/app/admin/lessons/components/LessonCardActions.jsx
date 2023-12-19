@@ -1,15 +1,12 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import {
-    Button, CardActions, useTheme
+    CardActions, useTheme
 } from '@mui/material';
 import AdminActionButtons from './AdminActionButtons';
+import UserActionButtons from '../../../users/UserActionButtons';
 
+const LessonCardActions = ({ lesson, deleteLesson, joinLesson, isAdmin }) => {
 
-
-const LessonCardActions = ({ lesson, deleteLesson }) => {
-    const theme = useTheme();
-    const navigate = useNavigate();
+    const theme = useTheme()
 
     return (
         <CardActions
@@ -20,7 +17,11 @@ const LessonCardActions = ({ lesson, deleteLesson }) => {
                 px: 2
             }}>
 
-            <AdminActionButtons lesson={lesson} deleteLesson={deleteLesson} />
+            {isAdmin ?
+                <AdminActionButtons lesson={lesson} deleteLesson={deleteLesson} />
+
+                : <UserActionButtons lesson={lesson} joinLesson={joinLesson} />
+            }
         </CardActions>
 
     );

@@ -5,6 +5,7 @@ const PrimaryButton = ({ text, action, bgcol, col, px }) => {
     const theme = useTheme();
     return (
         <Button
+            size="small"
             variant="contained"
             sx={{
                 bgcolor: bgcol || theme.palette.primary.main,

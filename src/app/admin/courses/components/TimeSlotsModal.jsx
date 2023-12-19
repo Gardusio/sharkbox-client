@@ -101,7 +101,8 @@ const TimeSlotsModal = ({ slots, onSave, onRemove, onClose, selectedDay }) => {
 
             </List>
 
-            <Button variant="contained" onClick={onClose} >
+            <Button sx={{ mt: 2, color: "#fff" }}
+                variant="contained" onClick={onClose} >
                 SALVA
             </Button>
         </Box >

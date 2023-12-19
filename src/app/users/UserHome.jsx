@@ -1,9 +1,11 @@
 import DayCarousel from "../common/buttons/DayCarousel.jsx";
 import { useEffect, useState } from "react";
-import { getAllByDate, removeLesson } from "../../api/lessons.api.js";
-import LessonsList from "./lessons/components/LessonsList.jsx";
+import { getAllByDate } from "../../api/lessons.api.js";
 import dayjs from "dayjs";
 import UsersLessonsList from "./UserLessonsList.jsx";
+import LessonsList from "../admin/lessons/components/LessonsList.jsx";
+
+const joinLesson = () => { }
 
 function UserHome() {
 
@@ -27,7 +29,7 @@ function UserHome() {
 
             <DayCarousel fetchLessons={fetchLessons} />
 
-            <UsersLessonsList
+            <LessonsList
                 lessons={lessons}
                 joinLesson={joinLesson}
             />

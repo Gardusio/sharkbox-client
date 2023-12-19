@@ -148,8 +148,8 @@ const CourseForm = ({ course, onSave }) => {
                 <Dialog sx={{ p: 0 }} open={isModalOpen} fullScreen>
                     <DialogTitle
                         textAlign={'center'}
-                        bgcolor={'#2f2f2f'}
                         fontWeight={'bold'}
+                        bgcolor={theme.palette.bg.main}
                         color={"#fff"}>Palinsesto per {fullDayName(selectedDay)}</DialogTitle>
                     <TimeSlotsModal
                         selectedDay={selectedDay}
@@ -160,7 +160,7 @@ const CourseForm = ({ course, onSave }) => {
                     />
                 </Dialog>
                 <Button
-                    sx={{ mt: 2 }}
+                    sx={{ color: "#fff" }}
                     variant="contained"
                     onClick={() => onSave(formData)}>
                     Salva
