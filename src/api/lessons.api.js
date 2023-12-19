@@ -1,8 +1,8 @@
 import dayjs from "dayjs";
 import { delet, get, orElseThrow, post, put } from "./api";
 
+
 export const removePartecipant = async (lesson, userId) => {
-    console.log(lesson, userId)
     const doRemove = async () => await put("/lessons/" + lesson.id + "/partecipants/" + userId);
 
     return await orElseThrow(doRemove)

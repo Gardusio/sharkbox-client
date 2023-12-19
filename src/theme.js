@@ -19,9 +19,11 @@ const theme = createTheme({
         },
         secondary: {
             main: '#999933',
+            light: '#fff'
         },
         warning: {
-            main: "#7a7a7a"
+            main: "#7a7a7a",
+            light: '#fff'
         }
     },
     containers: {

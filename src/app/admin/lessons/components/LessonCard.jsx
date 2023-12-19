@@ -20,7 +20,7 @@ const LessonCard = ({ lesson, deleteLesson, joinLesson }) => {
             return navigate("/lezioni/" + lesson.id)
         }
         else {
-            return navigate(`/lezioni/${lesson.id}/partecipa/${user.id}`)
+            return
         }
     }
 
