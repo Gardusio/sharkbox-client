@@ -51,6 +51,7 @@ export const getById = async (id) => {
 }
 
 export const updateLesson = async (lesson) => {
+    console.log("updating lesson", lesson)
     const doPut = async () => await put("/lessons/", lesson);
 
     return await orElseThrow(doPut)

@@ -3,7 +3,7 @@ import React from 'react';
 import { Container, Typography, List, ListItem } from '@mui/material';
 import LessonCard from './LessonCard';
 
-const LessonsList = ({ lessons, deleteLesson, joinLesson }) => {
+const LessonsList = ({ lessons, deleteLesson, joinLesson, leaveLesson }) => {
 
     return (
         <Container component="main" sx={{ p: 0, marginBottom: "100px" }}>
@@ -24,7 +24,12 @@ const LessonsList = ({ lessons, deleteLesson, joinLesson }) => {
                                 divider
                                 sx={idx > 0 ? { mt: 6 } : { mt: 0 }}>
 
-                                <LessonCard lesson={lesson} deleteLesson={deleteLesson} joinLesson={joinLesson} />
+                                <LessonCard
+                                    lesson={lesson}
+                                    deleteLesson={deleteLesson}
+                                    joinLesson={joinLesson}
+                                    leaveLesson={leaveLesson}
+                                />
                             </ListItem>
                         ))}
                     </List>

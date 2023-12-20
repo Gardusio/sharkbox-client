@@ -17,6 +17,8 @@ const EditLessonPage = ({ lesson, updateLessonState }) => {
                 anticipo_prenotazione, anticipo_disdetta, max_partecipanti,
                 start, end } = formData
 
+            console.log("updating date", lesson.date)
+
             const updated = await updateLesson({
                 ...lesson,
                 anticipo_prenotazione,

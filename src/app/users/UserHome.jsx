@@ -1,6 +1,6 @@
 import DayCarousel from "../common/buttons/DayCarousel.jsx";
 import { useContext, useEffect, useState } from "react";
-import { addPartecipant, getAllByDate } from "../../api/lessons.api.js";
+import { addPartecipant, getAllByDate, removePartecipant } from "../../api/lessons.api.js";
 import dayjs from "dayjs";
 
 import LessonsList from "../admin/lessons/components/LessonsList.jsx";
@@ -41,6 +41,14 @@ function UserHome() {
             .finally(() => setIsLoading(false));
     }
 
+    const leaveLesson = (lesson) => {
+        setIsLoading(true);
+        removePartecipant(lesson, user.id)
+            .then(response => navigate("/"))
+            .catch(err => setError("Qualcosa è andato storto, riprova più tardi"))
+            .finally(() => setIsLoading(false));
+    }
+
     if (isLoading) {
         return (
             <Box mt={50}>
@@ -58,6 +66,7 @@ function UserHome() {
                 <LessonsList
                     lessons={lessons}
                     joinLesson={joinLesson}
+                    leaveLesson={leaveLesson}
                 />
             }
         </main>

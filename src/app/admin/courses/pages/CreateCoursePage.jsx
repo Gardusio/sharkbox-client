@@ -16,7 +16,9 @@ const CreateCoursePage = () => {
                 return
             }
 
-            await createCourse(formData);
+            await createCourse(
+                formData
+            );
             setError(null)
 
             navigate('/corsi/');

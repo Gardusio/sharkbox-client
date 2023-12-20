@@ -7,7 +7,7 @@ import LessonCardContent from './LessonCardContent';
 import LessonCardActions from './LessonCardActions';
 import { UserContext } from '../../../context/UserProvider';
 
-const LessonCard = ({ lesson, deleteLesson, joinLesson }) => {
+const LessonCard = ({ lesson, deleteLesson, joinLesson, leaveLesson }) => {
 
     const { user } = useContext(UserContext);
     const theme = useTheme();
@@ -43,6 +43,7 @@ const LessonCard = ({ lesson, deleteLesson, joinLesson }) => {
                 lesson={lesson}
                 deleteLesson={deleteLesson}
                 joinLesson={joinLesson}
+                leaveLesson={leaveLesson}
                 isAdmin={user && user.role === "ADMIN"}
             />
 

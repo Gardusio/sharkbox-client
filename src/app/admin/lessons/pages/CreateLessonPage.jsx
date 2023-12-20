@@ -3,6 +3,7 @@ import { createLesson } from '../../../../api/lessons.api.js';
 import { Typography } from '@mui/material';
 import { useNavigate } from 'react-router';
 import CreateLessonForm from '../forms/CreateLessonForm.jsx';
+import dayjs from "dayjs"
 
 const CreateLessonPage = () => {
     const navigate = useNavigate();
@@ -18,6 +19,7 @@ const CreateLessonPage = () => {
 
             await createLesson({
                 ...formData,
+                date: dayjs(formData.date).format("DD/MM/YYYY"),
                 type: "SINGLE"
             });
 

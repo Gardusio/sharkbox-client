@@ -2,9 +2,9 @@ import {
     CardActions, useTheme
 } from '@mui/material';
 import AdminActionButtons from './AdminActionButtons';
-import UserActionButtons from '../../../users/UserActionButtons';
+import UserActionButtons from '../../../users/UserActions';
 
-const LessonCardActions = ({ lesson, deleteLesson, joinLesson, isAdmin }) => {
+const LessonCardActions = ({ lesson, deleteLesson, joinLesson, isAdmin, leaveLesson }) => {
 
     const theme = useTheme()
 
@@ -20,7 +20,7 @@ const LessonCardActions = ({ lesson, deleteLesson, joinLesson, isAdmin }) => {
             {isAdmin ?
                 <AdminActionButtons lesson={lesson} deleteLesson={deleteLesson} />
 
-                : <UserActionButtons lesson={lesson} joinLesson={joinLesson} />
+                : <UserActionButtons lesson={lesson} joinLesson={joinLesson} leaveLesson={leaveLesson} />
             }
         </CardActions>
 

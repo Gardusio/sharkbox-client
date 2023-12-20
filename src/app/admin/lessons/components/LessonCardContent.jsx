@@ -13,12 +13,12 @@ const LessonCardContent = ({ lesson }) => {
 
             <CardListItem
                 label={"Iscritti"}
-                value={`${lesson.partecipanti.length} persone`}
+                value={`${lesson.partecipanti.length} / ${lesson.max_partecipanti} `}
                 icon={GroupsTwoToneIcon} />
 
             <CardListItem
                 label={"In coda"}
-                value={`${lesson.coda.length} persone`}
+                value={`${lesson.coda.length}`}
                 icon={QueueTwoToneIcon} />
         </List>
 

@@ -52,6 +52,11 @@ const CreateLessonForm = ({ onSave }) => {
     };
 
     const handleDateChange = (date) => {
+        console.log("date", date)
+        const dayjsDate = dayjs(date)
+        console.log("dayjs", dayjsDate)
+        console.log("formatted", dayjsDate.format("DD/MM/YYYY"))
+
         setFormData((prevData) => {
             return {
                 ...prevData,
