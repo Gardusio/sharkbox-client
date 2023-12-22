@@ -41,7 +41,6 @@ const CourseForm = ({ course, onSave }) => {
     const handleCloseModal = () => {
         setSelectedDay(null);
         setModalOpen(false);
-        console.log(formData)
     };
 
     const handleSaveSlots = (newSlots) => {

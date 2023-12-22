@@ -10,7 +10,8 @@ const PrimaryButton = ({ text, action, bgcol, col, px }) => {
             sx={{
                 bgcolor: bgcol || theme.palette.primary.main,
                 color: col || theme.palette.text.light,
-                px: px || 2
+                px: px || 2,
+                borderRadius: "4px"
             }}
             onClick={action}
         >{text}

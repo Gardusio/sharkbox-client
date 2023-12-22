@@ -21,8 +21,8 @@ function UserHome() {
 
     const fetchLessons = (date) => {
         getAllByDate(date)
-            .then(lessons =>
-                setLessons(lessons)
+            .then(lessonsData =>
+                setLessons(lessonsData)
             )
             .catch(err => setError("Qualcosa è andato storto, riprova più tardi"))
             .finally(() => setIsLoading(false));

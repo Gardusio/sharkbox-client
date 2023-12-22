@@ -9,6 +9,7 @@ export const removePartecipant = async (lesson, userId) => {
 }
 
 export const addPartecipant = async (lesson, user) => {
+    console.log(lesson.id)
     const doAdd = async () => await post("/lessons/" + lesson.id + "/partecipants", user);
 
     return await orElseThrow(doAdd)
@@ -16,6 +17,12 @@ export const addPartecipant = async (lesson, user) => {
 
 export const getAll = async () => {
     const doGet = async () => await get("/lessons/");
+
+    return await orElseThrow(doGet)
+}
+
+export const getAllByUser = async (userId) => {
+    const doGet = async () => await get("/lessons/user/" + userId);
 
     return await orElseThrow(doGet)
 }
@@ -51,7 +58,6 @@ export const getById = async (id) => {
 }
 
 export const updateLesson = async (lesson) => {
-    console.log("updating lesson", lesson)
     const doPut = async () => await put("/lessons/", lesson);
 
     return await orElseThrow(doPut)

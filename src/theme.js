@@ -1,6 +1,7 @@
 import { createTheme } from '@mui/material/styles';
 
-
+const primary_main = "#08BDBD"
+const secondary_main = "#999933"
 
 const theme = createTheme({
     palette: {
@@ -13,12 +14,12 @@ const theme = createTheme({
             main: '#2B2A29',
         },
         primary: {
-            main: '#08BDBD',
+            main: primary_main,
             dark: '#2B2A29',
             light: '#fff'
         },
         secondary: {
-            main: '#999933',
+            main: secondary_main,
             light: '#fff'
         },
         warning: {
@@ -86,14 +87,15 @@ const theme = createTheme({
                 borderRadius: "8px"
             },
             highlighted: {
-                border: "1px solid #08BDBD",
+                border: "1px solid",
+                borderColor: primary_main,
                 borderRadius: "8px"
             }
         },
         shadows: {
             primary: {
                 main: "rgba(0, 0, 0, 0.16) 0px 1px 3px",
-                highlighted: "#08BDBD 0px 0px 3px"
+                highlighted: `${primary_main} 0px 0px 3px`
             }
 
         }
@@ -105,5 +107,37 @@ const theme = createTheme({
         }
     }
 })
+
+
+export const getItaDay = (day) => {
+    switch (day) {
+        case "Mon": return "Lun"
+        case "Tue": return "Mar"
+        case "Wed": return "Mer"
+        case "Thu": return "Gio"
+        case "Fri": return "Ven"
+        case "Sat": return "Sab"
+        case "Sun": return "Dom"
+        default: return ""
+    }
+}
+
+export const getItaMonth = (day) => {
+    switch (day) {
+        case "Dec": return "Dic"
+        case "Jan": return "Gen"
+        case "Feb": return "Feb"
+        case "Mar": return "Mar"
+        case "Apr": return "Apr"
+        case "May": return "Mag"
+        case "Jun": return "Giu"
+        case "Jul": return "Lug"
+        case "Aug": return "Ago"
+        case "Sep": return "Set"
+        case "Opt": return "Ott"
+        case "Nov": return "Nov"
+        default: return ""
+    }
+}
 
 export default theme;

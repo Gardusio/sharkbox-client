@@ -9,7 +9,7 @@ const RegisterPage = () => {
         nome: '',
         cognome: '',
         email: '',
-        telefono: "",
+        phone: "",
         password: '',
         confirmPassword: '',
     });
@@ -34,8 +34,9 @@ const RegisterPage = () => {
 
             await register({
                 name: formData.nome,
-                lastName: formData.cognome,
+                lastname: formData.cognome,
                 email: formData.email,
+                phone: formData.phone,
                 password: formData.password,
             });
 
@@ -84,6 +85,17 @@ const RegisterPage = () => {
                     size="small"
                     name="email"
                     value={formData.email}
+                    onChange={handleChange}
+                />
+                <TextField
+                    label="Telefono"
+                    type="tel"
+                    fullWidth
+                    margin="normal"
+                    variant="outlined"
+                    size="small"
+                    name="phone"
+                    value={formData.phone}
                     onChange={handleChange}
                 />
                 <TextField

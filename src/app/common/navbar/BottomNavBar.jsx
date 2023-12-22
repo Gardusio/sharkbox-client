@@ -4,6 +4,10 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import ViewListIcon from '@mui/icons-material/ViewList';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import PeopleIcon from '@mui/icons-material/People';
+import CampaignRoundedIcon from '@mui/icons-material/CampaignRounded';
+import ClassIcon from '@mui/icons-material/Class';
+import ChecklistRtlIcon from '@mui/icons-material/ChecklistRtl';
 import { useNavigate } from 'react-router';
 import { UserContext } from '../../context/UserProvider';
 
@@ -25,8 +29,6 @@ export default function BottomNavBar() {
                 onChange={(event, newValue) => {
                     setValue(newValue);
 
-                    console.log(newValue);
-
                     switch (newValue) {
                         case "corsi":
                             navigate("/corsi")
@@ -37,8 +39,11 @@ export default function BottomNavBar() {
                         case "utenti":
                             navigate("/utenti")
                             break;
-                        case "tutorial":
-                            navigate("/tutorial")
+                        case "classi":
+                            navigate("/classi")
+                            break;
+                        case "messaggi":
+                            navigate("/messaggi")
                             break;
                         default: break;
                     }
@@ -47,51 +52,53 @@ export default function BottomNavBar() {
             >
 
                 <BottomNavigationAction
-
                     sx={{
                         color: "#fff",
-                        '& .Mui-selected': { color: "#fff" },
                     }}
                     label="Calendario"
                     value="calendario"
                     icon={<CalendarMonthIcon
-                        sx={{
-                            color: "#fff",
-                            '& .Mui-selected': { color: "#fff" },
-                        }}
+
 
                     />} />
 
                 {user && user.role === "ADMIN" ?
                     <BottomNavigationAction
-
                         sx={{
                             color: "#fff",
-                            '& .Mui-selected': { color: "#fff" },
                         }}
                         label="Corsi"
                         value="corsi"
-                        icon={<ViewListIcon sx={{ color: "#fff" }} />} />
+                        icon={<ViewListIcon />} />
                     : null}
-                {/*
+
+                {user && user.role === "ADMIN" ?
+                    <BottomNavigationAction
+                        sx={{ color: "#fff", }}
+                        label="Utenti"
+                        value="utenti"
+                        icon={<PeopleIcon />} />
+                    : null
+                }
+
+                {user && user.role === "USER" ?
+                    <BottomNavigationAction
+                        sx={{ color: "#fff", }}
+                        label="Classi"
+                        value="classi"
+                        icon={<ChecklistRtlIcon />} />
+                    :
+                    null
+                }
+
+
                 <BottomNavigationAction
                     sx={{
                         color: "#fff",
-                        '& .Mui-selected': { color: "#fff" },
                     }}
-                    label="Utenti"
-                    value="utenti"
-                    icon={<PeopleIcon sx={{ color: "#fff" }} />} />
-                
-                <BottomNavigationAction
-                    sx={{
-                        color: "#fff",
-                        '& .Mui-selected': { color: "#fff" },
-                    }}
-                    label="Tutorial"
-                    value="tutorial"
-                    icon={<HelpIcon sx={{ color: "#fff" }} />} />
-*/}
+                    label="Messaggi"
+                    value="messaggi"
+                    icon={<CampaignRoundedIcon />} />
             </BottomNavigation>
         </Box>
     );

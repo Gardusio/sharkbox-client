@@ -14,6 +14,10 @@ import CreateLessonPage from '../admin/lessons/pages/CreateLessonPage';
 import LessonPage from '../admin/lessons/pages/LessonPage';
 import PartecipantsPage from '../admin/lessons/pages/PartecipantsPage';
 import UserHome from '../users/UserHome';
+import ComunicazioniPage from '../admin/comm/ComunicazioniPage';
+import CreaMessaggioPage from '../admin/comm/CreaMessaggioPage';
+import UsersPage from '../admin/users/UsersPage';
+import ClassesPage from '../users/ClassesPage';
 
 
 function BoxRoutes() {
@@ -23,9 +27,11 @@ function BoxRoutes() {
 
     const adminLoggedIn = loggedIn && user.role === "ADMIN";
 
-    const authenticatedPage = (page) => loggedIn ? page : <Navigate to="/login" />
-
     const adminPage = (page) => adminLoggedIn ? page : <Navigate to="/login" />
+
+    const userPage = (page) => loggedIn ? page : <Navigate to="/login" />
+
+
 
     return (
         <BrowserRouter>
@@ -58,6 +64,26 @@ function BoxRoutes() {
                         adminPage(<PartecipantsPage />)
                     } />
 
+                    <Route
+                        path="/messaggi"
+                        element={<ComunicazioniPage />}
+                    />
+
+                    <Route
+                        path="/messaggi/crea"
+                        element={adminPage(<CreaMessaggioPage />)}
+                    />
+
+                    <Route
+                        path="/utenti"
+                        element={adminPage(<UsersPage />)}
+                    />
+
+
+                    <Route
+                        path="/classi"
+                        element={userPage(<ClassesPage />)}
+                    />
                 </Route>
             </Routes>
         </BrowserRouter >

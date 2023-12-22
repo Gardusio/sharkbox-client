@@ -4,7 +4,7 @@ import { Container, Typography, List, ListItem } from '@mui/material';
 import LessonCard from './LessonCard';
 
 const LessonsList = ({ lessons, deleteLesson, joinLesson, leaveLesson }) => {
-
+    console.log("lessons list", lessons)
     return (
         <Container component="main" sx={{ p: 0, marginBottom: "100px" }}>
             {
@@ -19,7 +19,7 @@ const LessonsList = ({ lessons, deleteLesson, joinLesson, leaveLesson }) => {
 
                         {lessons.map((lesson, idx) => (
                             <ListItem
-                                key={lesson.id + lesson.slot_id}
+                                key={lesson.id}
                                 disablePadding
                                 divider
                                 sx={idx > 0 ? { mt: 6 } : { mt: 0 }}>

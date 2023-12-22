@@ -26,7 +26,6 @@ const CourseListPage = () => {
 
     const deleteCourse = async (course) => {
         try {
-            console.log("remove")
             await removeCourse(course.id)
             setCourses((prevData) => prevData.filter(c => c.id != course.id))
             setError(null)

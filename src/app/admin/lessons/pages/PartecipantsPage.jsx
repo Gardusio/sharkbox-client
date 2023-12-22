@@ -88,7 +88,7 @@ const PartecipantsPage = () => {
                                 disableGutters
                                 secondaryAction={
                                     <IconButton
-                                        sx={{ color: "#942911" }}
+                                        color="warning"
                                         variant="text"
                                         onClick={async () => await handleRemovePartecipant(user)}>
                                         <RemoveCircleTwoToneIcon />

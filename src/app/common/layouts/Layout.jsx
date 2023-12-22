@@ -1,4 +1,4 @@
-import { Outlet, useLocation, useNavigate } from "react-router";
+import { Outlet, useLocation } from "react-router";
 import BottomNavBar from "../navbar/BottomNavBar";
 import SimpleTopBar from "../navbar/SimpleTopBar";
 
@@ -27,6 +27,18 @@ function Layout() {
     }
     else if (pathname.includes("/corsi/modifica")) {
       return { withBtn: false, title: "Palinsesto del corso" };
+    }
+    else if (pathname.includes("/utenti")) {
+      return { withBtn: false, title: "Rubrica utenti" };
+    }
+    else if (pathname == "/messaggi") {
+      return { withBtn: true, title: "Messaggi", btnText: "Crea nuovo", link: "/messaggi/crea" };
+    }
+    else if (pathname == "/messaggi/crea") {
+      return { withBtn: false, title: "Nuovo messaggio" };
+    }
+    else if (pathname == "/classi") {
+      return { withBtn: false, title: "Le tue Lezioni" };
     }
     else {
       return { withBtn: false, title: "Corsi" };
